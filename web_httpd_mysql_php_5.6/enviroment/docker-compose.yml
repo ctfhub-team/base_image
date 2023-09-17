@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: ctfhub_base/web_httpd_mysql_php_5.6
+    ports:
+      - "10800:80"
+    environment:
+      - FLAG=ctfhub{test_flag}
