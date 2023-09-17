@@ -2,9 +2,9 @@
 
 ## 环境版本
 
-- Debian 9 (stretch) amd64
-- Apache/2.4.25
-- PHP 5.6.40
+- Debian 11 (bullseye) amd64
+- Apache/2.4.51
+- PHP 7.4.27
 
 ## 环境变量
 
