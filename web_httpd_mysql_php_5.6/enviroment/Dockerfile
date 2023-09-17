@@ -24,7 +24,6 @@ RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql &&\
     sh -c 'mysqld_safe &' &&\
     sleep 5s &&\
     mysqladmin -uroot password 'root' &&\
-    mysql -uroot -proot -e "UPDATE mysql.user SET Password=PASSWORD('root') WHERE user='root';" \
     mysql -uroot -proot -e "create user ping@'%' identified by 'ping';" &&\
     mysql -uroot -proot -e "create database web default character set utf8;" &&\
     mysql -uroot -proot -e "grant all privileges on web.* to 'web'@'localhost' identified by 'web';" &&\
