@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: ctfhub_base/pwn_xinetd_test
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctfhub{test_flag}
