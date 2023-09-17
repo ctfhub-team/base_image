@@ -5,7 +5,9 @@
 ## 镜像拉取
 
 镜像存放地址:
-- `registry.cn-hangzhou.aliyuncs.com`
+1. `registry.cn-hangzhou.aliyuncs.com`
+2. `dockerhub`
+
 镜像命名空间: `ctfhub_base`
 
 例如，要拉取web_httpd_php_5.6，则完整的pull命令如下
