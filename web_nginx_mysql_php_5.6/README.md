@@ -6,6 +6,7 @@
 - nginx/1.10.3
 - PHP 5.6.40
 
+已安装扩展: `mysql` `mysqli` `pdo_mysql`
 默认软件源为 http://mirrors.tencent.com/debian-archive/debian
 
 ## 环境变量
