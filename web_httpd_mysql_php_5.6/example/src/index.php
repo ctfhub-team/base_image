@@ -16,4 +16,5 @@ $result = mysqli_query($conn, $sql);
 $res    = mysqli_fetch_array($result);
 var_dump($res);
 mysqli_close($conn);
+phpinfo();
 ?>
