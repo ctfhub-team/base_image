@@ -18,6 +18,15 @@
 
 - php.ini: /usr/local/etc/php/php.ini
 
+## 账号密码
+
+|服务|账号|密码|主机|
+|-|-|-|-|
+|mysql|root|root|localhost|
+|mysql|web|web|localhost|
+|mysql|web|web|127.0.0.1|
+|mysql|ping|ping|%|
+
 ## 示例
 
 请查看`example`文件夹
