@@ -7,7 +7,7 @@
 - PHP 7.4.27
 - MariaDB 10.5.19-MariaDB-0+deb11u2
 
-已安装mysqli pdo_mysql三个扩展
+已安装扩展: `mysqli` `pdo_mysql`
 默认软件源为 http://mirrors.tencent.com/debian
 
 ## 环境变量
