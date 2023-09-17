@@ -2,10 +2,10 @@
 
 ## 环境版本
 
-- Debian 9 (stretch) amd64
-- Apache/2.4.25
-- PHP 5.6.40
-- MariaDB 10.1.45-MariaDB-0+deb9u1
+- Debian 9 (bullseye) amd64
+- Apache/2.4.51
+- PHP 7.4.27
+- MariaDB 10.5.19-MariaDB-0+deb11u2
 
 已安装mysqli pdo_mysql三个扩展
 默认软件源为 http://mirrors.tencent.com/debian
