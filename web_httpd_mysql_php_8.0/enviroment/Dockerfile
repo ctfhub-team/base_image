@@ -1,6 +1,6 @@
 FROM php:8.0-apache
 
-LABEL Organization="CTFHUB" Author="L1n3 <yw9381@163.com>"
+LABEL Organization="CTFHub" Author="L1n3 <yw9381@163.com>"
 
 ENV TZ=Asia/Shanghai
 
