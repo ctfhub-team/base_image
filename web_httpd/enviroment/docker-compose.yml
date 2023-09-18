@@ -1,0 +1,9 @@
+version: "3"
+services:
+  challenge:
+    build: .
+    image: ctfhub_base/web_httpd
+    ports:
+      - "10800:80"
+    environment:
+      - FLAG=ctfhub{test_flag}
