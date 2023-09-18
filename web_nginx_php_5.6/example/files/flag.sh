@@ -35,10 +35,6 @@ write_flag_in_fs() {
     echo ${FLAG} > ${flag_path}
 }
 
-test_func() {
-    local db_name="${1:-web}"
-    echo $db_name
-}
 write_flag_in_db() {
     local db_name="${1:-web}"
     local db_table="${2:-flag}"
