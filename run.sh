@@ -10,10 +10,10 @@ do_stop()  {
     docker-compose down
 }
 do_bash()  {
-    docker-compose exec web bash
+    docker-compose exec challenge bash
 }
 do_sh()    {
-    docker-compose exec web sh
+    docker-compose exec challenge sh
 }
 do_help() {
     echo "CTFHub测试脚本"

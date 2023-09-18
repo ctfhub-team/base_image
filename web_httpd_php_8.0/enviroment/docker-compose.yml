@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  challenge:
     build: .
     image: ctfhub_base/web_httpd_php_8.0
     ports:

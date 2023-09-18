@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  challenge:
     build: .
     image: ctfhub_base/pwn_xinetd_test
     ports:

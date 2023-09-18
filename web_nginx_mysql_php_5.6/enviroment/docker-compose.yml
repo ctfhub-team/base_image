@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  challenge:
     build: .
     image: ctfhub_base/web_nginx_mysql_php_5.6
     ports:
