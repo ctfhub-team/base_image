@@ -30,6 +30,13 @@ done
 
 ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
 
+echo "[+] Import DB"
+if [[ -f /var/www/html/db.sql ]]; then
+    sed -i "s#FLAG#$FLAG#" /var/www/html/db.sql
+    mysql -uroot -proot -e "source /var/www/html/db.sql;"
+    rm -rf /var/www/html/db.sql
+fi
+
 echo "[+] Init flag.sh"
 if [ -e /flag.sh ]; then
     source /flag.sh

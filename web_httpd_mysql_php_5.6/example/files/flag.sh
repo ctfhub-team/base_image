@@ -42,12 +42,6 @@ write_flag_in_db() {
     echo mysql -uroot -proot -e "update ${db_name}.${db_table} set ${db_column}='${FLAG}';"
 }
 
-if [[ -f /var/www/html/db.sql ]]; then
-    sed -i "s#FLAG#$FLAG#" /var/www/html/db.sql
-    mysql -uroot -proot -e "source /var/www/html/db.sql;"
-    rm -rf /var/www/html/db.sql
-fi
-
 write_flag_in_db web flag flag
 
 export FLAG=not_flag
