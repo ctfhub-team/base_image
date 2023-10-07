@@ -1,0 +1,9 @@
+version: "3"
+services:
+  challenge:
+    build: .
+    image: ctfhub_base/misc_python_3.11
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctfhub{test_flag}
