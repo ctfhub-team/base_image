@@ -65,7 +65,7 @@ case "$1" in
     sh)
         do_sh
         ;;
-    log)
+    log | l)
         do_log
         ;;
     *)
