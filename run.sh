@@ -21,26 +21,34 @@ do_log()    {
 do_help() {
     echo "CTFHub测试脚本"
     echo "run.sh [test|build|start|stop|bash|sh|help]"
-    echo "+-------+----------------------------------+"
-    echo "| test  | 依次执行stop->build->start->bash |"
-    echo "| build | 构建环境                         |"
-    echo "| start | 启动环境                         |"
-    echo "| stop  | 停止环境                         |"
-    echo "| bash  | 执行bash进入Docker内部           |"
-    echo "| sh    | 执行sh进入Docker内部             |"
-    echo "| log   | 查看容器日志                     |"
-    echo "| help  | 打印本消息                       |"
-    echo "+-------+----------------------------------+"
+    echo "+-------+--------------------------------------+"
+    echo "| test_bash | 依次执行stop->build->start->bash |"
+    echo "| test_log  | 依次执行stop->build->start->log  |"
+    echo "| build     | 构建环境                         |"
+    echo "| start     | 启动环境                         |"
+    echo "| stop      | 停止环境                         |"
+    echo "| bash      | 执行bash进入Docker内部           |"
+    echo "| sh        | 执行sh进入Docker内部             |"
+    echo "| log       | 查看容器日志                     |"
+    echo "| help      | 打印本消息                       |"
+    echo "+-------+--------------------------------------+"
     echo ""
     echo "For Example: ./run.sh test"
 }
 
 case "$1" in
-    test)
+    test_bash | test | t)
         do_stop
         do_build
         do_start
         do_bash
+        ;;
+    test_log | tl)
+        do_stop
+        do_build
+        do_start
+        echo "------- Docker Log -------"
+        do_log
         ;;
     build)
         do_build
