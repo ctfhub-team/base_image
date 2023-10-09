@@ -8,12 +8,13 @@
 1. `registry.cn-hangzhou.aliyuncs.com`
 2. `dockerhub`
 
-镜像命名空间: `ctfhub_base`
+镜像命名空间: 阿里云:`ctfhub_base`, dockerhub:`ctfhub`
 
 例如，要拉取web_httpd_php_5.6，则完整的pull命令如下
+
 ```bash
 # 从dockerhub拉取
-docker pull ctfhub_base/web_httpd_php_5.6
+docker pull ctfhub/web_httpd_php_5.6
 
 # 从阿里云拉取
 docker pull registry.cn-hangzhou.aliyuncs.com/ctfhub_base/web_httpd_php_5.6
