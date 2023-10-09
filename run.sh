@@ -7,13 +7,16 @@ do_start() {
     docker-compose up -d
 }
 do_stop()  {
-    docker-compose down
+    docker-compose down -t 1
 }
 do_bash()  {
     docker-compose exec challenge bash
 }
 do_sh()    {
     docker-compose exec challenge sh
+}
+do_log()    {
+    docker-compose logs -f
 }
 do_help() {
     echo "CTFHub测试脚本"
@@ -25,6 +28,7 @@ do_help() {
     echo "| stop  | 停止环境                         |"
     echo "| bash  | 执行bash进入Docker内部           |"
     echo "| sh    | 执行sh进入Docker内部             |"
+    echo "| log   | 查看容器日志                     |"
     echo "| help  | 打印本消息                       |"
     echo "+-------+----------------------------------+"
     echo ""
@@ -52,6 +56,9 @@ case "$1" in
         ;;
     sh)
         do_sh
+        ;;
+    log)
+        do_log
         ;;
     *)
         do_help
