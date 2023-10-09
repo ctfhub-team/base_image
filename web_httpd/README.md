@@ -14,7 +14,7 @@
 ## 配置文件
 
 - apache2.conf: /etc/apache2/apache2.conf
-- vhost: /etc/apache2/sites-available/000-default.conf
+- 000-default.conf: /etc/apache2/sites-available/000-default.conf
 
 ## 示例
 

@@ -15,6 +15,7 @@
 ## 配置文件
 
 - php.ini: /usr/local/etc/php/php.ini
+- 000-default.conf: /etc/apache2/sites-available/000-default.conf
 
 ## 示例
 

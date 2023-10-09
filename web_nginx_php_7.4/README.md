@@ -15,6 +15,7 @@
 ## 配置文件
 
 - php.ini: /usr/local/etc/php/php.ini
+- nginx.conf: /etc/nginx/nginx.conf
 
 ## 示例
 

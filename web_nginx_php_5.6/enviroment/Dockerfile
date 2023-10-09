@@ -15,9 +15,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 COPY files /tmp/
 
 RUN mv /tmp/flag.sh /flag.sh &&\
-    chmod +x /flag.sh &&\
+    mv /tmp/start.sh /start.sh &&\
+    chmod +x /flag.sh /start.sh &&\
     mv /tmp/nginx.conf /etc/nginx/nginx.conf &&\
-    mv /tmp/entrypoint.sh /usr/local/bin/docker-php-entrypoint &&\
+    mv /tmp/docker-entrypoint.sh /usr/local/bin/docker-php-entrypoint &&\
     chmod +x /usr/local/bin/docker-php-entrypoint &&\
     chown -R www-data:www-data /var/www/html &&\
     mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini &&\

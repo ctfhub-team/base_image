@@ -1,30 +1,17 @@
 #!/bin/bash
-set -e
-
 mysql_ready() {
-    echo "[+] mysql_ready"
     mysqladmin ping -h 127.0.0.1 -uping -pping > /dev/null 2>&1
 }
 
-run_mysql() {
-    echo "[+] run_mysql"
+mysql_run() {
     /usr/bin/mysqld_safe --user=root --skip-name-resolve --skip-networking=0 &
-}
-
-keep_alive(){
-    while true
-    do
-        mysql_ready
-        run_mysql
-        sleep 5s
-    done
 }
 
 # Run MySQL before `source /flag.sh`
 echo "[+] Init MySQL"
 while !(mysql_ready)
 do
-    run_mysql
+    mysql_run
     sleep 3s
 done
 
@@ -37,15 +24,22 @@ if [[ -f /var/www/html/db.sql ]]; then
     rm -rf /var/www/html/db.sql
 fi
 
-echo "[+] Init flag.sh"
-if [ -e /flag.sh ]; then
-    source /flag.sh
+if [[ -e /flag.sh ]]; then
+	echo "[+] Init flag.sh"
+	source /flag.sh
+	rm /flag.sh && unset FLAG
 fi
 
-keep_alive &
+if [[ -e /start.sh ]]; then
+	echo "[+] Init start.sh"
+	source /start.sh
+	rm /start.sh
+fi
 
-php-fpm &
-nginx &
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+    set -- apache2-foreground "$@"
+fi
 
 echo "Running..."
-tail -F /var/log/nginx/*.log
+exec "$@"

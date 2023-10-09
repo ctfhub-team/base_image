@@ -16,14 +16,15 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&\
 COPY files /tmp/
 
 RUN mv /tmp/flag.sh /flag.sh &&\
-    chmod +x /flag.sh &&\
-    mv /tmp/entrypoint.sh /entrypoint.sh &&\
-    chmod +x /entrypoint.sh &&\
+    mv /tmp/start.sh /start.sh &&\
+    chmod +x /flag.sh /start.sh &&\
+    mv /tmp/docker-entrypoint.sh /docker-entrypoint.sh &&\
+    chmod +x /docker-entrypoint.sh &&\
     rm -rf /var/www/html/* &&\
     echo "test page" > /var/www/html/index.html &&\
     chown -R www-data:www-data /var/www/html &&\
     rm -rf /tmp/*
 
 WORKDIR /var/www/html
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 80
