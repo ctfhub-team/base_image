@@ -18,3 +18,12 @@ docker pull ctfhub_base/web_httpd_php_5.6
 # 从阿里云拉取
 docker pull registry.cn-hangzhou.aliyuncs.com/ctfhub_base/web_httpd_php_5.6
 ```
+
+## 启动顺序
+
+所有环境遵循如下启动顺序
+
+1. 创建容器
+2. 执行`/flag.sh`，可被覆盖，处理flag存放逻辑
+3. 执行`/start.sh`，可被覆盖，处理单独安装的应用如何启动，启动应当都为后台启动，防止卡住后续的内置应用
+4. 执行内置应用(httpd，nginx，mysql，xinetd，socat，python等)
