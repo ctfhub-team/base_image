@@ -51,3 +51,5 @@ root@1ad5afdc7626:/app# ldd pwn
     /app/libc.so (0x00007f2588e64000)
     /app/ld.so => /lib64/ld-linux-x86-64.so.2 (0x00007f258903a000)
 ```
+
+注意：请使用gcc直接编译出来的二进制产物放入容器住，请不要自行patchelf后放入
