@@ -44,6 +44,14 @@
 ./src/pwn         pwn二进制
 ```
 
+修改前的elf ldd如下, 请确保libc路径为`libc.so.6`
+```bash
+root@1ad5afdc7626:/app# ldd pwn
+        linux-vdso.so.1 (0x00007fffcef8f000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe6bbc89000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007fe6bbe7e000)
+```
+
 最终修改完成后的elf ldd如下
 ```bash
 root@1ad5afdc7626:/app# ldd pwn
