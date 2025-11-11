@@ -1,0 +1,9 @@
+version: "3"
+services:
+  pwn:
+    build: .
+    image: ctfhub/pwn_socat_ubuntu_2404
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctfhub{test_flag}

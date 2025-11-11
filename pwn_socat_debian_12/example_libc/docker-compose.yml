@@ -1,0 +1,9 @@
+version: "3"
+services:
+  challenge:
+    build: .
+    image: ctfhub/pwn_socat_debian_12_example_libc
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctfhub{test_flag}
